@@ -1,0 +1,7 @@
+from itertools import permutations
+
+def tsp(cities):
+    return min([perm for perm in permutations(cities)], key=lambda x: sum([cities[x[i]][x[i+1]] for i in range(len(cities)-1)]))
+
+cities = {0: {1: 2, 2: 3, 3: 4}, 1: {0: 2, 2: 5, 3: 1}, 2: {0: 3, 1: 5, 3: 8}, 3: {0: 4, 1: 1, 2: 8}}
+print(tsp(cities))
