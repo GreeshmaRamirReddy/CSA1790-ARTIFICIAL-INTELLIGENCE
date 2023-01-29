@@ -1,0 +1,5 @@
+encode( L, X) :-
+    L = ['a','b','b','c','c','c','d','d'],
+    L = [ H | T ],
+    encode( T, X2),
+    X = [ (a, 1) | X2 ] .
